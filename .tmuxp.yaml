@@ -1,18 +1,15 @@
 # --- tmuxp Configuration for Web Development ---
 
-session_name: webdev_project # Name your tmux session
+session_name: dynamic_project_name # This line is required by your tmuxp version. It will be overridden by the script.
 
 windows:
   - window_name: editor-terminal # Primary window for coding and general commands
-    layout: main-horizontal # Divides the window horizontally (editor on top, terminal on bottom)
+    layout: main-horizontal  # Divides the window horizontally (editor on top, terminal on bottom)
+    options:
+      main-pane-height: 70%
     panes:
       - shell_command: # Pane 1 (Top): Your Nvim editor
           - nvim . # Opens nvim in the current directory.
-                   # This allows you to navigate to any file (HTML, CSS, JS)
-                   # using nvim's built-in file explorer or plugins (e.g., netrw, nvim-tree).
-                   # This is generally more efficient than separate tmux windows for each file.
-          # If you prefer to open a specific file first, you can do:
-          # - nvim index.html
       - shell_command: # Pane 2 (Bottom): General purpose terminal
           - clear # Clears the terminal output when the pane starts
           # Add any initial commands you want to run here:
@@ -20,16 +17,9 @@ windows:
           # - git status
 
   - window_name: browsersync # Dedicated window for BrowserSync server
-    layout: main-pane # Just one pane in this window
     panes:
       - shell_command:
           - clear # Clears the terminal output
           - ./start_browsersync.sh # Executes your BrowserSync launch script.
-                                   # This script will:
-                                   # 1. Ensure BrowserSync is installed.
-                                   # 2. Start the BrowserSync server.
-                                   # 3. Automatically open your project in your default browser
-                                   #    at the correct live-reloading URL (e.g., http://localhost:3000).
-                                   # 4. Keep this server running in the background.
-          # Leave this pane running in the background. You'll switch to the 'editor-terminal' window to work.
+
 

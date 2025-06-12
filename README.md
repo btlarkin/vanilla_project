@@ -108,10 +108,10 @@ Once your new project folder is set up:
 
 ### 3. Launch Your Project
 
-From your project's root directory (`my-new-project-name/`), load the `tmuxp` session:
+From your project's root directory (e.g., `my-new-project-name/`), execute the project launcher script:
 
 ```bash
-tmuxp load .
+./launch_project.sh
 ```
 
 `tmuxp` will now set up your `tmux` session with multiple windows and panes, and BrowserSync will automatically launch your project in your default web browser.
