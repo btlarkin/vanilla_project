@@ -34,7 +34,7 @@ echo "Watching HTML, CSS, and JS files for changes."
 #                  on the same network (e.g., your phone). Use 'local' if you only want localhost.
 browser-sync start \
   --server "$PROJECT_ROOT" \
-  --files "$PROJECT_ROOT/**/*.html,$PROJECT_ROOT/**/*.css,$PROJECT_ROOT/**/*.js" \
+  --files "$PROJECT_ROOT/**/*.html,$PROJECT_ROOT/**/*.xhtml,$PROJECT_ROOT/**/*.css,$PROJECT_ROOT/**/*.js" \
   --no-ui \
   --port 3000 \
   --open external
